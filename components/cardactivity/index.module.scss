@@ -1,35 +1,3 @@
-// .CardActivity {
-//     width: 110px;
-//     text-align: right;
-//     >img {
-//         border-radius: 15px;
-//         width: 110px;
-//         height: 110px;
-//         object-fit: cover;
-//     }
-//     &:hover {
-//         filter: grayscale(100%);
-//     }
-//     >p {
-//         margin: 0 12px;
-//         padding: 0;
-//     }
-//     >h5 {
-//         margin: auto;
-//         text-align: center;
-//         display: none;
-//     }
-//     &:hover {
-//         filter: grayscale(100%);
-//         transition: all 0.3s linear;
-//         p {
-//             display: none;
-//         }
-//         h5 {
-//             display: block;
-//         }
-//     }
-// }
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Reem+Kufi&display=swap');
 .CardActivity {
     width: 110px;
