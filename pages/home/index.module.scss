@@ -1,0 +1,39 @@
+// Actually mixins and variables here, but it needs an appropriate path
+$primary-color: #3c9ace;
+$dark_color: #171717;
+$light_color: #f7f7f7;
+
+@mixin flexCenter($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+}
+// ------------------------------------------------------
+
+.Home {
+  @include flexCenter(space-between);
+  height: 100vh;
+  color: $light_color;
+
+  header,
+  footer {
+    @include flexCenter();
+
+    width: 100%;
+    background: $primary-color;
+  }
+
+  main {
+    @include flexCenter(space-between);
+    width: 100%;
+    height: 500px;
+
+    section {
+      @include flexCenter(center);
+      width: 100%;
+      height: 200px;
+      background: $primary-color;
+    }
+  }
+}
