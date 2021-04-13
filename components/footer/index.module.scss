@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+
+.Footer {
+  @include flexCenter();
+
+  width: 100%;
+  background: $primary-color;
+  color: $light_color;
+}

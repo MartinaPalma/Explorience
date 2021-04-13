@@ -1,0 +1,10 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+
+.Header {
+  @include flexCenter();
+
+  width: 100%;
+  background: $primary-color;
+  color: $light_color;
+}
