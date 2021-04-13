@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+
+.MostVisitedCities {
+  > h3 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  > h4 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 0 15px 0;
+    color: #aaaaaa;
+  }
+}
+
+.scroll {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  gap: 8px;
+  max-width: 100vw;
+}
