@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import CardActivities from '../components/cardactivities'
 import styles from './index.module.scss'
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
           <strong>Section 1</strong>
         </section>
         <section>
-          <strong>Section 2</strong>
+          <CardActivities />
         </section>
       </main>
     </div>
