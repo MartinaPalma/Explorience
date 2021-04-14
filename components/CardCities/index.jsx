@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
 
-const CardCities = ({ mark, title, image }) => {
+const CardCities = ({ activities_count, name, image }) => {
   return (
     <article className={styles.CardCities}>
-      <h5>{title}</h5>
-      <p>{mark}</p>
-      <img src={image} alt={title} />
+      <h5>{name}</h5>
+      <p>{activities_count}</p>
+      <img src={image} alt={name} />
     </article>
   )
 }
