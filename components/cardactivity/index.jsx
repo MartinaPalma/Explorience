@@ -1,12 +1,11 @@
 import styles from './index.module.scss'
 
-function CardActivity({ image, title, mark }) {
+function CardActivity({ image, code, relevance }) {
   return (
     <article className={styles.CardActivity}>
-      <h5>{title}</h5>
-      <p>{mark}</p>
-      <img src={image} alt={title} />
-      {/* <Link to={`/product/${product.id}`}>View details</Link> */}
+      <h5 className={styles.relevance}>{code}</h5>
+      <img src={image} alt={code} />
+      <p style={{ color: '#171717' }}>{relevance / 10 / 2}</p>
     </article>
   )
 }

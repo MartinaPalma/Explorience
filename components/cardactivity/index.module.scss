@@ -4,7 +4,9 @@
     text-align: center;
     cursor: pointer;
     position: relative;
-    // color: colore variabile scuro
+    >.relevance {
+        text-transform: capitalize;
+    }
     >img {
         border-radius: 15px;
         width: 110px;
