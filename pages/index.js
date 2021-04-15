@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import CardActivities from '../components/cardactivities'
+import MostVisitedCities from '../components/mostVisitedCities'
 import styles from './index.module.scss'
 
 export default function Home() {
@@ -9,10 +10,9 @@ export default function Home() {
         <title>Explorience</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <section>
-          <strong>Section 1</strong>
+          <MostVisitedCities />
         </section>
         <section>
           <CardActivities />
