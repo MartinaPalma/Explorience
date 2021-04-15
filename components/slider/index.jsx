@@ -1,13 +1,12 @@
 import styles from './index.module.scss'
 import { useState, useEffect } from 'react'
 import { images } from '../../utils/images'
-import Indicator from '../indicator'
+import Indicator from '../Indicator'
 
 const Slider = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const autoPlayTime = 8000
   function nextSlide(slideIndex = currentSlide + 1) {
-    // const newSlideIndex = slideIndex >= images.length ? 0 : slideIndex
     const newSlideIndex = slideIndex >= images.length ? 0 : slideIndex
     setCurrentSlide(newSlideIndex)
   }
