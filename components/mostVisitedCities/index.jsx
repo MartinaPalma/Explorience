@@ -20,12 +20,13 @@ const MostVisitedCities = () => {
       <div className={styles.scroll}>
         {cities
           .filter(({ activities_count }) => activities_count >= 100)
-          .map(({ cover_image_url, activities_count, name, uuid }) => {
+          .map(({ cover_image_url, activities_count, name, uuid, id }) => {
             return (
               <CardCities
                 image={`${cover_image_url}?fit=crop&h=150`}
                 name={name}
                 activities_count={activities_count}
+                id={id}
                 key={uuid}
               />
             )
