@@ -1,9 +1,12 @@
+import Link from 'next/link'
 import styles from './index.module.scss'
 
 const Header = () => {
   return (
     <div className={styles.Header}>
-      <h3>HEADER</h3>
+      <Link href="/">
+        <div className={styles.logo}>HEADER</div>
+      </Link>
     </div>
   )
 }

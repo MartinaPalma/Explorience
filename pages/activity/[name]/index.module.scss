@@ -1,0 +1,15 @@
+@import '../../../styles/scss/mixins';
+@import '../../../styles/scss/variables';
+
+.Activity {
+  @include flexCenter();
+
+  img {
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #17171750;
+  }
+}
+
+.loading {
+  @include flexCenter();
+}
