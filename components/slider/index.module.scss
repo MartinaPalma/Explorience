@@ -1,0 +1,53 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+
+.Slider {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+}
+.image {
+  height: 100%;
+  width: 100vw;
+  flex-shrink: 0;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.9s linear;
+  margin: 0;
+  filter: grayscale(0.3) contrast(1.2) brightness(70%);
+}
+.title {
+  @include flexCenter(center, center, column);
+  color: $light_color;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+
+  > h1 {
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    font-size: 14vw;
+    white-space: nowrap;
+    color: $light_color;
+    opacity: 0.5;
+  }
+  > h2 {
+    text-transform: uppercase;
+    margin: auto;
+    position: absolute;
+    margin-top: 14%;
+    font-size: 4vw;
+    text-shadow: 1px 2px 2px #1717179f;
+    transform: translateY(-45px);
+  }
+}

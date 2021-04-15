@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
-import Header from '../header'
+import Navbar from '../navbar'
 import Footer from '../footer'
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.Layout}>
-      <Header />
+      <Navbar />
       {children}
       <Footer />
     </div>
