@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
 
-const Header = () => {
+const Navbar = () => {
   return (
-    <div className={styles.Header}>
+    <div className={styles.Navbar}>
       <h3>HEADER</h3>
     </div>
   )
 }
 
-export default Header
+export default Navbar
