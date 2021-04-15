@@ -18,6 +18,7 @@
   background-size: cover;
   transition: all 0.9s linear;
   margin: 0;
+  filter: grayscale(0.3) contrast(1.2) brightness(70%);
 }
 .title {
   @include flexCenter(center, center, column);
@@ -33,18 +34,20 @@
   > h1 {
     text-transform: uppercase;
     margin: 0;
+    padding: 0;
     width: 100vw;
-    font-size: 12vw;
+    font-size: 14vw;
     white-space: nowrap;
     color: $light_color;
-    opacity: 0.8;
+    opacity: 0.5;
   }
   > h2 {
     text-transform: uppercase;
     margin: auto;
     position: absolute;
     margin-top: 14%;
-    font-size: 3vmax;
-    text-shadow: 2px 3px 4px #1717179f;
+    font-size: 4vw;
+    text-shadow: 1px 2px 2px #1717179f;
+    transform: translateY(-45px);
   }
 }
