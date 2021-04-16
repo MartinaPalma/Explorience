@@ -1,12 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
-
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
-
 .Footer {
-  @include flexCenter();
+  margin-top: 80px;
+  padding: 15px 0 0 0;
 
+  @include flexCenter();
   width: 100%;
-  background: $primary-color;
+  background: lighten($dark_color, 20%);
   color: $light_color;
+
+  p {
+    font-size: 0.9rem;
+    margin: 10px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: 0;
+    opacity: 0.8;
+    transition: all 0.35s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
