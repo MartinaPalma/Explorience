@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 const Footer = () => {
   return (
     <div className={styles.Footer}>
-      <h3>FOOTER</h3>
+      <h3>Made with ♥️ NextJS</h3>
     </div>
   )
 }
