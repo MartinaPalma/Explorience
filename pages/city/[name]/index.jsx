@@ -1,26 +1,15 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import axios from 'axios'
 import styles from './index.module.scss'
 
 import HeaderCity from '../../../components/headerCity'
 import ContentCity from '../../../components/contentCity'
 
-const City = () => {
-  const router = useRouter()
-  const [city, setCity] = useState()
+const getPairCitiesIDs = (cities) => cities.map((city) => [city.name, city.id])
 
-  useEffect(() => {
-    axios(
-      `https://sandbox.musement.com/api/v3/cities/${
-        router.query.id || localStorage.getItem('localStorageCity')
-      }`
-    ).then((data) => {
-      setCity(data.data)
-      city && localStorage.setItem('localStorageCity', router.query.id)
-    })
-  }, [])
+const getCity = (cityName, cities) =>
+  cities.find((city) => city.includes(cityName))
 
+const City = ({ city }) => {
   return (
     <>
       {city && (
@@ -30,7 +19,11 @@ const City = () => {
             name={city.name}
             country={city.country.name}
           />
-          <ContentCity name={city.name} content={city.content} />
+          <ContentCity
+            name={city.name}
+            content={city.content}
+            activityID={city.id}
+          />
         </div>
       )}
     </>
@@ -38,3 +31,23 @@ const City = () => {
 }
 
 export default City
+
+export async function getServerSideProps(context) {
+  const resCities = await axios.get(
+    'https://sandbox.musement.com/api/v3/cities.json'
+  )
+
+  const resCity = await axios.get(
+    `https://sandbox.musement.com/api/v3/cities/${
+      getCity(context.query.name, getPairCitiesIDs(resCities.data))[1]
+    }`
+  )
+
+  return {
+    props: {
+      cities: resCities.data,
+      city: resCity.data,
+      query: context.query,
+    },
+  }
+}

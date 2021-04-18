@@ -13,7 +13,7 @@ function CardActivity({ image, code, relevance, uuid, city, allData }) {
       <h5 className={styles.relevance}>{allData.verticals[0]?.name}</h5>
       <Link
         href={{
-          pathname: `/${uuid}`,
+          pathname: `/[name]`,
           query: { uuid: uuid, city: city },
         }}
         as={`/${pathName}`}

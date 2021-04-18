@@ -1,23 +1,7 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import axios from 'axios'
 import styles from './index.module.scss'
 
-const Activity = () => {
-  const router = useRouter()
-  const [activity, setActivity] = useState()
-
-  useEffect(() => {
-    axios(
-      `https://sandbox.musement.com/api/v3/activities/${
-        router.query.uuid || localStorage.getItem('myCat')
-      }`
-    ).then((data) => {
-      localStorage.setItem('myCat', router.query.uuid)
-      setActivity(data.data)
-    })
-  }, [])
-
+const Activity = ({ activity }) => {
   return (
     <>
       {activity && (
@@ -31,3 +15,15 @@ const Activity = () => {
 }
 
 export default Activity
+
+export async function getServerSideProps({ query }) {
+  const { data } = await axios.get(
+    `https://sandbox.musement.com/api/v3/activities/${query.uuid || query.id}`
+  )
+
+  return {
+    props: {
+      activity: data,
+    },
+  }
+}

@@ -8,7 +8,7 @@ const CardCities = ({ activities_count, name, image, id }) => {
       <p>{activities_count}</p>
       <Link
         href={{
-          pathname: `/city/${id}`,
+          pathname: `/city/[name]`,
           query: { id: id },
         }}
         as={`/city/${name} `}

@@ -9,7 +9,7 @@ const formatContentText = (content) => {
   return textArr.splice(1, textArr.length - 2).join('.')
 }
 
-const ContentCity = ({ name, content }) => {
+const ContentCity = ({ name, content, activityID }) => {
   const router = useRouter()
 
   const paragraph = content.split('.')
@@ -21,7 +21,9 @@ const ContentCity = ({ name, content }) => {
 
     axios
       .get(
-        `https://sandbox.musement.com/api/v3/cities/${cityID}/activities.json`
+        `https://sandbox.musement.com/api/v3/cities/${
+          cityID || activityID
+        }/activities.json`
       )
       .then((res) => {
         const { data } = res
