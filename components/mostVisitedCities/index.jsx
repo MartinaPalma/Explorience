@@ -27,6 +27,7 @@ const MostVisitedCities = () => {
                 name={name}
                 activities_count={activities_count}
                 id={id}
+                uuid={uuid}
                 key={uuid}
               />
             )

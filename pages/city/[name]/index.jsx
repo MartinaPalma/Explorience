@@ -3,6 +3,9 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import styles from './index.module.scss'
 
+import HeaderCity from '../../../components/headerCity'
+import ContentCity from '../../../components/contentCity'
+
 const City = () => {
   const router = useRouter()
   const [city, setCity] = useState()
@@ -20,13 +23,15 @@ const City = () => {
 
   return (
     <>
-      {city ? (
+      {city && (
         <div className={styles.City}>
-          <h3>{city.name}</h3>
-          <img src={`${city.cover_image_url}?fit=crop&h=400`} alt={city.name} />
+          <HeaderCity
+            image={city.cover_image_url}
+            name={city.name}
+            country={city.country.name}
+          />
+          <ContentCity name={city.name} content={city.content} />
         </div>
-      ) : (
-        <div className={styles.loading}>Loading...</div>
       )}
     </>
   )

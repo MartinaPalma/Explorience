@@ -19,16 +19,16 @@ const CardActivities = () => {
       <div className={styles.scroll}>
         {activities
           .filter((activity) => activity.cover_image_url)
-          .map((activity) => {
+          .map((activity, i) => {
             return (
               <CardActivity
-                allData={activity}
                 city={activity.city}
                 uuid={activity.uuid}
                 image={activity.cover_image_url}
                 code={activity.verticals[0].code}
-                relevance={activity.verticals[0].relevance}
+                relevance={activity.verticals[0]?.relevance}
                 key={activity.uuid}
+                allData={activity}
               />
             )
           })}

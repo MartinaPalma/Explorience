@@ -1,0 +1,61 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+.HeaderCity {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    >img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        filter: brightness(85%);
+    }
+    >div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        margin: auto;
+        color: $light_color;
+        text-transform: uppercase;
+        text-align: center;
+        @include flexCenter(center, center, column);
+        align-items: center;
+        >h1 {
+            font-size: 21vw;
+            margin: -30px;
+            text-shadow: 2px 3px 4px #1717179f;
+        }
+        >h2 {
+            font-size: 10vw;
+            margin: 0;
+            text-shadow: 1px 2px 2px $dark_color;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .HeaderCity {
+        width: 50vw;
+        height: 100vh;
+        >img {
+            width: 50vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+        }
+        >div {
+            >h1 {
+                display: none;
+            }
+            >h2 {
+                text-align: left;
+                font-size: 10rem;
+                width: 100%;
+                transform: translateX(-12px);
+            }
+        }
+    }
+}

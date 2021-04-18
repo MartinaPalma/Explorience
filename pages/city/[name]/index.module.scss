@@ -3,6 +3,7 @@
 
 .City {
   @include flexCenter();
+  background-color: $light_color;
 
   img {
     border-radius: 6px;
@@ -12,4 +13,12 @@
 
 .loading {
   @include flexCenter();
+}
+
+@media (min-width: 992px) {
+  .City {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+  }
 }

@@ -6,26 +6,23 @@ const getActivityUrlTitle = (fullURL) => {
   return splittedURL[splittedURL.length - 2]
 }
 
-const getActivityUrlTitles = (fullURL) => {
-  const splittedURL = fullURL.split('-')
-  const oneMore = splittedURL.splice(1, splittedURL.length - 2)
-  return oneMore.join('/').replaceAll('/', '-')
-}
-
 function CardActivity({ image, code, relevance, uuid, city, allData }) {
+  const pathName = city ? getActivityUrlTitle(city.url) : ''
   return (
     <article className={styles.CardActivity}>
-      <h5 className={styles.relevance}>{code}</h5>
+      <h5 className={styles.relevance}>{allData.verticals[0]?.name}</h5>
       <Link
         href={{
-          pathname: `/${getActivityUrlTitle(city.url)}`,
-          query: { uuid: uuid },
+          pathname: `/${uuid}`,
+          query: { uuid: uuid, city: city },
         }}
-        as={`/${getActivityUrlTitles(allData.url) || city}`}
+        as={`/${pathName}`}
       >
         <img src={image} alt={code} />
       </Link>
-      <p style={{ color: '#171717' }}>{relevance / 10 / 2}</p>
+      {relevance ? (
+        <p style={{ color: '#171717' }}>{relevance / 10 / 2}</p>
+      ) : null}
     </article>
   )
 }

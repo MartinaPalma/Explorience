@@ -13,12 +13,8 @@ export default function Home() {
       </Head>
       <HeaderHome />
       <main>
-        <section>
-          <MostVisitedCities />
-        </section>
-        <section>
-          <CardActivities />
-        </section>
+        <MostVisitedCities />
+        <CardActivities />
       </main>
     </div>
   )
