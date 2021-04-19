@@ -1,0 +1,7 @@
+@import '../../styles/scss/variables';
+.Activity {
+  background-color: $light_color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
