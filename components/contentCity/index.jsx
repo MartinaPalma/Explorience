@@ -1,18 +1,19 @@
 import styles from './index.module.scss'
-import CardActivity from '../cardactivity'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
+import Figurine from '../figurine'
+
 const formatContentText = (content) => {
-  const textArr = content.split('.')
-  return textArr.splice(1, textArr.length - 2).join('.')
+  const textArr = content && content.split('.')
+  return content && textArr.splice(1, textArr.length - 2).join('.')
 }
 
 const ContentCity = ({ name, content, activityID }) => {
   const router = useRouter()
 
-  const paragraph = content.split('.')
+  const paragraph = content && content.split('.')
   const [activities, setActivities] = useState([])
   const [cityID, setCityID] = useState()
 
@@ -33,7 +34,7 @@ const ContentCity = ({ name, content, activityID }) => {
 
   return (
     <div className={styles.ContentCity}>
-      <p className={styles.firstParagraph}>{paragraph[0]}</p>
+      <p className={styles.firstParagraph}>{paragraph && paragraph[0]}</p>
       <div>
         <h3>{name}</h3>
         <p className={styles.content}>{formatContentText(content)}</p>
@@ -42,28 +43,15 @@ const ContentCity = ({ name, content, activityID }) => {
         <h4>experiences</h4>
         <div className={styles.scroll}>
           {activities.length ? (
-            activities
-              .filter((activity) => activity.cover_image_url)
-              .map((activity) => {
-                const {
-                  cover_image_url,
-                  uuid,
-                  city,
-                  operational_days,
-                } = activity
-                return (
-                  <CardActivity
-                    image={cover_image_url}
-                    code={operational_days}
-                    relevance={activity?.verticals[0]?.relevance || ''}
-                    city={city}
-                    cityID={city.id}
-                    uuid={uuid}
-                    key={uuid}
-                    allData={activity}
-                  />
-                )
-              })
+            activities.map((activity) => {
+              return (
+                <Figurine
+                  endPoint="activities"
+                  data={activity}
+                  key={activity.uuid}
+                />
+              )
+            })
           ) : (
             <span>Loading...</span>
           )}

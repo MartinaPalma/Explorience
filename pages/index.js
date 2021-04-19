@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import CardActivities from '../components/cardactivities'
-import MostVisitedCities from '../components/mostVisitedCities'
 import styles from './index.module.scss'
 
 import { HeaderHome } from '../components'
+import FigurineContainer from '../components/figurineContainer'
 
 export default function Home() {
   return (
@@ -13,9 +12,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderHome />
+
       <main>
-        <MostVisitedCities />
-        <CardActivities />
+        <FigurineContainer
+          endPoint="cities"
+          titleComp="Scopri le città più visitate"
+          subTitleComp="Lasciati ispirare dalle mete più ambite"
+        />
+        <FigurineContainer
+          endPoint="activities"
+          titleComp="Scopri le attività più ricercate"
+          subTitleComp="Lasciati trasportare dalle attività più ambite"
+        />
       </main>
     </div>
   )
