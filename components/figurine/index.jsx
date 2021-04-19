@@ -9,8 +9,10 @@ const reduceImageSize = (imgPath) =>
 const Figurine = ({ endPoint, data }) => {
   return (
     <div className={styles.figurine}>
-      <h5>{data.name || data?.verticals[0]?.name}</h5>
-      <p>
+      <h5 className={styles.figurine_name}>
+        {data.name || data?.verticals[0]?.name}
+      </h5>
+      <p className={styles.figurine_star}>
         {endPoint === 'cities'
           ? data.activities_count
           : data.verticals[0]?.relevance}
@@ -28,6 +30,7 @@ const Figurine = ({ endPoint, data }) => {
         }`}
       >
         <img
+          className={styles.figurine_image}
           src={
             reduceImageSize(data.cover_image_url) ||
             'http://unsplash.it/300/300?gravity=center'
