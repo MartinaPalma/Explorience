@@ -8,7 +8,9 @@ const FigurineContainer = ({ endPoint, titleComp, subTitleComp }) => {
 
   useEffect(() => {
     axios
-      .get(`https://sandbox.musement.com/api/v3/${endPoint}.json`)
+      .get(`https://sandbox.musement.com/api/v3/${endPoint}.json?limit=10`, {
+        headers: { 'Accept-Language': 'it-IT' },
+      })
       .then(({ data }) => {
         switch (endPoint) {
           case 'activities':

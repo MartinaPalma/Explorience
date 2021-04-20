@@ -15,7 +15,7 @@ const City = ({ city }) => {
       {city && (
         <div className={styles.City}>
           <HeaderCity
-            image={city.cover_image_url}
+            image={city.cover_image_url + '?fit=crop&h=900'}
             name={city.name}
             country={city.country.name}
           />
@@ -34,13 +34,15 @@ export default City
 
 export async function getServerSideProps(context) {
   const resCities = await axios.get(
-    'https://sandbox.musement.com/api/v3/cities.json'
+    'https://sandbox.musement.com/api/v3/cities.json',
+    { headers: { 'Accept-Language': 'it-IT' } }
   )
 
   const resCity = await axios.get(
     `https://sandbox.musement.com/api/v3/cities/${
       getCity(context.query.name, getPairCitiesIDs(resCities.data))[1]
-    }`
+    }`,
+    { headers: { 'Accept-Language': 'it-IT' } }
   )
 
   return {

@@ -14,8 +14,11 @@ const ActivityPage = ({ activity }) => {
 export default ActivityPage
 
 export async function getServerSideProps({ query }) {
-  const { data } = await axios.get(
-    `https://sandbox.musement.com/api/v3/activities/${query.uuid || query.id}`
+  const {
+    data,
+  } = await axios.get(
+    `https://sandbox.musement.com/api/v3/activities/${query.uuid || query.id}`,
+    { headers: { 'Accept-Language': 'it-IT' } }
   )
 
   return {

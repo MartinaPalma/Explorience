@@ -24,7 +24,8 @@ const ContentCity = ({ name, content, activityID }) => {
       .get(
         `https://sandbox.musement.com/api/v3/cities/${
           cityID || activityID
-        }/activities.json`
+        }/activities.json?limit=10`,
+        { headers: { 'Accept-Language': 'it-IT' } }
       )
       .then((res) => {
         const { data } = res

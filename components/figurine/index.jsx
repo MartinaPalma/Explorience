@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const encodeTitleToURL = (string) => string.toLowerCase().replaceAll(' ', '-')
 
-const reduceImageSize = (imgPath) =>
-  imgPath && `${imgPath}?fit=crop&h=150&max-w=150`
+// const reduceImageSize = (imgPath) =>
+//   imgPath && `${imgPath}?fit=crop&h=150&max-w=150`
 
 const Figurine = ({ endPoint, data }) => {
   return (
@@ -32,8 +32,9 @@ const Figurine = ({ endPoint, data }) => {
         <img
           className={styles.figurine_image}
           src={
-            reduceImageSize(data.cover_image_url) ||
-            'http://unsplash.it/300/300?gravity=center'
+            data.cover_image_url
+              ? data.cover_image_url + '?fit=crop&h=225'
+              : 'https://dummyimage.com/350.jpg'
           }
           alt={data.name || data.title}
         />
