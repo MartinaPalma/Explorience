@@ -1,20 +1,17 @@
 import axios from 'axios'
 import styles from './index.module.scss'
 
-const Activity = ({ activity }) => {
+import Activity from '../../components/activity'
+
+const ActivityPage = ({ activity }) => {
   return (
-    <>
-      {activity && (
-        <div className={styles.Activity}>
-          <h3>{activity.title}</h3>
-          <img src={activity.cover_image_url} alt={activity.title} />
-        </div>
-      )}
-    </>
+    <div className={styles.ActivityPage}>
+      {activity && <Activity activity={activity} />}
+    </div>
   )
 }
 
-export default Activity
+export default ActivityPage
 
 export async function getServerSideProps({ query }) {
   const { data } = await axios.get(
