@@ -4,11 +4,9 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 
 import Figurine from '../figurine'
+import Loader from '../loader'
 
-const formatContentText = (content) => {
-  const textArr = content && content.split('.')
-  return content && textArr.splice(1, textArr.length - 2).join('.')
-}
+import { formatContentText } from '../../utils/utils'
 
 const ContentCity = ({ name, content, activityID }) => {
   const router = useRouter()
@@ -24,7 +22,7 @@ const ContentCity = ({ name, content, activityID }) => {
       .get(
         `https://sandbox.musement.com/api/v3/cities/${
           cityID || activityID
-        }/activities.json?limit=10`,
+        }/activities.json?limit=100`,
         { headers: { 'Accept-Language': 'it-IT' } }
       )
       .then((res) => {
@@ -56,7 +54,7 @@ const ContentCity = ({ name, content, activityID }) => {
               )
             })
           ) : (
-            <span>Loading...</span>
+            <Loader />
           )}
         </div>
       </div>
