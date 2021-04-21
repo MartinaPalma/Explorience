@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 import { encodeTitleToURL } from '../../utils/utils'
 
-const Figurine = ({ endPoint, data }) => {
+const Figurine = ({ endPoint, data, dim }) => {
   return (
-    <div className={styles.figurine}>
+    <div className={!dim ? styles.figurine : styles.figurine && styles.fig}>
       <h5 className={styles.figurine_name}>
         {data.name || data?.verticals[0]?.name}
       </h5>
