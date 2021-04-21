@@ -1,10 +1,7 @@
 import styles from './index.module.scss'
 import Link from 'next/link'
 
-const encodeTitleToURL = (string) => string.toLowerCase().replaceAll(' ', '-')
-
-// const reduceImageSize = (imgPath) =>
-//   imgPath && `${imgPath}?fit=crop&h=150&max-w=150`
+import { encodeTitleToURL } from '../../utils/utils'
 
 const Figurine = ({ endPoint, data }) => {
   return (

@@ -2,15 +2,6 @@ import ContentActivity from '../contentActivity'
 import HeaderActivity from '../headerActivity'
 import styles from './index.module.scss'
 
-const getIndexJpegImageFromEnd = (URL, newSizeFilter) => {
-  if (URL) {
-    const jpegFormat = /.jpeg/.exec(URL).index
-    const delJpegFormat = URL.substring(0, jpegFormat)
-    return `${delJpegFormat}.jpeg${newSizeFilter}`
-  }
-  return URL
-}
-
 const Activity = ({ activity }) => {
   return (
     <div className={styles.Activity}>
