@@ -1,5 +1,6 @@
 import axios from 'axios'
 import styles from './index.module.scss'
+import { useEffect } from 'react'
 
 import Arrow from '../../components/arrow'
 import Activity from '../../components/activity'
@@ -8,16 +9,17 @@ import { useRouter } from 'next/router'
 const ActivityPage = ({ activity }) => {
   const router = useRouter()
 
+  useEffect(() => {
+    activity === '' && router.push('/404')
+  }, [])
+
   return (
     <>
       <Arrow isBackCity={false} onHandle={router.back} />
-
-      {activity ? (
+      {activity && (
         <div className={styles.ActivityPage}>
           <Activity activity={activity} />
         </div>
-      ) : (
-        <p>PAGE 404!</p>
       )}
     </>
   )

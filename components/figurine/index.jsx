@@ -18,6 +18,7 @@ const Figurine = ({ endPoint, data }) => {
               ? data.activities_count
               : data.verticals[0]?.relevance}
           </p>
+
           <Link
             href={{
               pathname: `/${
