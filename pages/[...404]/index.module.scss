@@ -1,0 +1,198 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+
+.body {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(
+    circle,
+    rgba(104, 181, 226, 1) 0%,
+    rgba(17, 113, 168, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.textContainer {
+  top: 10%;
+  left: 10%;
+  position: absolute;
+  color: $dark_color;
+
+  padding: 0 20px;
+  width: 300px;
+  font-size: 0.8rem;
+  font-family: 'Baloo 2', sans-serif;
+  z-index: 1;
+
+  h3 {
+    margin: 7.5px 0;
+    font-size: 1.8rem;
+  }
+
+  button {
+    position: relative;
+    margin-top: 15px;
+    padding: 8px 30px;
+    border-radius: 4px;
+    outline: none;
+    border: 0;
+
+    background: $light_color;
+    color: $dark_color;
+
+    cursor: pointer;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.35s;
+    z-index: 99999;
+
+    &:hover {
+      color: rgb(71, 182, 247);
+    }
+    &:active {
+      color: $light_color;
+      background: $dark_color;
+    }
+  }
+  @media (min-width: 676px) {
+    top: 18%;
+    left: 18%;
+
+    font-size: 1rem;
+    width: 400px;
+
+    h3 {
+      margin: 7.5px 0;
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.root {
+  --cloudTopFirst: 210px;
+  --cloudTopSecond: 100px;
+}
+.button404 {
+  width: fit-content;
+  margin-bottom: -170px;
+  z-index: 0;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 15px;
+  border-color: white;
+  font-family: 'Baloo 2', sans-serif;
+}
+.title {
+  margin: 0;
+  text-shadow: 8px 8px 8px black;
+  text-align: center;
+  color: white;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 60px;
+}
+
+.isle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: isleFloating 2s ease-in-out 0s infinite alternate;
+  z-index: 0;
+}
+
+.isle img:hover,
+.isle img:active {
+  transform: translate(0, 100px);
+  filter: sepia(0);
+  transition: 2s;
+  cursor: pointer;
+  filter: sepia(1);
+}
+
+div + .isle:hover > h3 {
+  animation: welcomeAnimation 2s ease-in-out 0s infinite alternate;
+}
+
+.cloud {
+  margin-bottom: -110px;
+  opacity: 0.55;
+  animation: cloudLeftFloating 18s ease-in-out 0s infinite alternate;
+}
+.cloud:nth-of-type(2) {
+  margin-bottom: 0;
+  opacity: 0.75;
+  animation: cloudRightFloating 14s ease-in-out 0s infinite alternate;
+}
+
+.cloud img {
+  max-width: 250px;
+  max-height: 180px;
+}
+.cloud:nth-of-type(2) img {
+  max-width: 190px;
+  max-height: 150px;
+}
+
+.cloud img:hover {
+  cursor: pointer;
+  filter: sepia(1);
+  transition: 0.5s;
+}
+
+.isleTitle {
+  margin-bottom: -170px;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.75rem;
+  color: #f1f1f1;
+  text-align: center;
+  text-shadow: 1px 0 1px #1f1f1f;
+  z-index: -1;
+}
+
+/* Isle floating */
+@keyframes isleFloating {
+  0% {
+  }
+  100% {
+    padding-top: 15px;
+  }
+}
+
+/* Right Cloud floating */
+@keyframes cloudRightFloating {
+  0% {
+  }
+  100% {
+    padding-left: 160px;
+  }
+}
+
+/* Left Cloud floating */
+@keyframes cloudLeftFloating {
+  0% {
+    padding-left: 100px;
+  }
+  100% {
+    padding-left: -100px;
+  }
+}
+
+@keyframes welcomeAnimation {
+  0% {
+    color: white;
+  }
+  100% {
+    color: #ffe763;
+  }
+}
