@@ -1,7 +1,6 @@
 @import '../../styles/scss/variables';
 .Activity {
-  background-color: $light_color;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    color: $dark_color;
+    background-color: $light_color;
+    min-height: 100vh;
 }

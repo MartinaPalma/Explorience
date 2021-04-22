@@ -1,15 +1,15 @@
 import styles from './index.module.scss'
 
-const HeaderActivity = ({ days, image, title, city }) => {
+const HeaderActivity = ({ activity }) => {
   return (
     <div className={styles.HeaderActivity}>
-      <img src={image} alt={title} />
-
-      <div className={styles.title}>
-        <p>{days}</p>
-        <h1>{title}</h1>
-        <h2>{city}</h2>
-      </div>
+      <div className={styles.HeaderActivity_bgr}></div>
+      <img
+        src={activity.cover_image_url}
+        alt={activity.title}
+        className={styles.HeaderActivity_image}
+      />
+      <h1 className={styles.HeaderActivity_title}>{activity.title}</h1>
     </div>
   )
 }

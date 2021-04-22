@@ -1,26 +1,60 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .ContentActivity {
-  padding: 8px 20px;
-  font-family: 'Baloo 2', sans-serif;
-  > h3 {
-    text-transform: uppercase;
-    font-weight: normal;
-    font-family: 'Reem Kufi', sans-serif;
-    margin-bottom: 0;
-    background-color: $primary-color;
-    color: $light_color;
-    width: max-content;
-    padding: 2px 10px;
-    border-radius: 8px;
-  }
-  .about {
-    margin: 0;
-  }
+    width: 100vw;
+    position: relative;
+    &_text {
+        padding: 15px 15px 35px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 1rem;
+    }
+    &_title {
+        font-family: 'Reem Kufi', sans-serif;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: normal;
+        padding: 4px;
+        margin: 35px 0 25px;
+        background-color: $primary_color;
+        color: $light_color;
+        width: max-content;
+        border-radius: 8px;
+    }
+    &_description {
+        text-align: justify;
+    }
+    &_card {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        background-color: $light_color;
+        box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+    }
 }
 
 @media (min-width: 992px) {
-  .ContentActivity {
-    padding: 18px 50px;
-  }
+    .ContentActivity {
+        max-width: 980px;
+        margin: auto;
+        display: flex;
+        &_text {
+            padding: 8px;
+            font-size: 1.1rem;
+        }
+        &_title {
+            font-size: 1.5rem;
+        }
+        &_card {
+            position: relative;
+            padding-top: 19.92px;
+            min-width: 400px;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 0 0;
+            >div {
+                position: fixed;
+            }
+        }
+    }
 }
