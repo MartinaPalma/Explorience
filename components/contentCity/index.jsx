@@ -33,16 +33,22 @@ const ContentCity = ({ name, content, activityID }) => {
 
   return (
     <div className={styles.ContentCity}>
-      <p className={styles.firstParagraph}>{paragraph && paragraph[0]}</p>
-      <div className={styles.content}>
-        <h3>{name}</h3>
-        <p>{formatContentText(content)}</p>
-        <h4 className={styles.contentTitle}>Esperienza</h4>
-        <h5>Da Esperire: dimostrare, dare prova </h5>
-        <em>Credo oggi aver esperto Ch’essere amato per valore io merto</em>
+      <p className={styles.ContentCity_firstParagraph}>
+        {paragraph && paragraph[0]}
+      </p>
+      <div className={styles.ContentCity_content}>
+        <h3 className={styles.ContentCity_title}>{name}</h3>
+        <p className={styles.ContentCity_text}>{formatContentText(content)}</p>
+        <h4 className={styles.ContentCity_experiences}>Esperienza</h4>
+        <h5 className={styles.ContentCity_experiencesSubtitle}>
+          Da Esperire: dimostrare, dare prova{' '}
+        </h5>
+        <em className={styles.ContentCity_quote}>
+          Credo oggi aver esperto Ch’essere amato per valore io merto
+        </em>
       </div>
-      <div>
-        <div className={styles.scroll}>
+      <div className={styles.ContentCity_activities}>
+        <div className={styles.ContentCity_scroll}>
           {activities.length ? (
             activities.map((activity) => {
               return (
