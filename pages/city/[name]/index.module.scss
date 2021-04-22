@@ -1,24 +1,19 @@
 @import '../../../styles/scss/mixins';
 @import '../../../styles/scss/variables';
-
 .City {
-  @include flexCenter();
-  background-color: $light_color;
-
-  img {
-    border-radius: 6px;
-    box-shadow: 1px 1px 2px #17171750;
-  }
+    @include flexCenter();
+    background-color: $light_color;
+    position: relative;
 }
 
 .loading {
-  @include flexCenter();
+    @include flexCenter();
 }
 
 @media (min-width: 992px) {
-  .City {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
-  }
+    .City {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+    }
 }

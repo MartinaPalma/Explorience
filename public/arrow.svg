@@ -1,9 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Generator: Adobe Illustrator 24.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg
+  version="1.1"
+  id="Livello_1"
   xmlns="http://www.w3.org/2000/svg"
-  fill="#f7f7f7"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="24"
   height="24"
+  fill="#f7f7f7"
   viewBox="0 0 24 24"
-><path
-    d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
-  /></svg>
+  xml:space="preserve"
+>
+<path
+    d="M5.4,12.1l12.3-5.9l-2.6,5.7C15.1,11.8,5.4,12.1,5.4,12.1z M0.7,12.1l21.8,9.9l-5.3-10l4.6-10.1L0.7,12.1z"
+  />
+</svg>

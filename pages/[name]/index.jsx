@@ -1,11 +1,17 @@
 import axios from 'axios'
 import styles from './index.module.scss'
 
+import Arrow from '../../components/arrow'
 import Activity from '../../components/activity'
+import { useRouter } from 'next/router'
 
 const ActivityPage = ({ activity }) => {
+  const router = useRouter()
+
   return (
     <>
+      <Arrow isBackCity={false} onHandle={router.back} />
+
       {activity ? (
         <div className={styles.ActivityPage}>
           <Activity activity={activity} />
