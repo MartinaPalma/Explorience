@@ -1,9 +1,10 @@
 import styles from './index.module.scss'
 import Figurine from '../figurine'
+import CardCity from '../cardCity'
 
 import Loader from '../loader'
 
-const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
+const FigurineList = ({ figurines, titleComp, subTitleComp }) => {
   return (
     <>
       <div className={styles.figurineList}>
@@ -13,11 +14,7 @@ const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
         <div className={styles.scroll}>
           {figurines.length >= 1 ? (
             figurines.map((figurine) => (
-              <Figurine
-                endPoint={endPoint}
-                data={figurine}
-                key={figurine.uuid}
-              />
+              <CardCity data={figurine} key={figurine.uuid} />
             ))
           ) : (
             <Loader />
