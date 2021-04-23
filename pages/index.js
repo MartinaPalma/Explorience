@@ -12,6 +12,7 @@ export default function Home() {
           <title>Explorience</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+
         <HeaderHome />
 
         <main>
