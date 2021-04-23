@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 import Arrow from '../../components/arrow'
 import Activity from '../../components/activity'
+import Modal from '../../components/modal'
 import { useRouter } from 'next/router'
 
 const ActivityPage = ({ activity }) => {
@@ -15,6 +16,7 @@ const ActivityPage = ({ activity }) => {
 
   return (
     <>
+      <Modal />
       <Arrow isBackCity={false} onHandle={router.back} />
       {activity && (
         <div className={styles.ActivityPage}>
