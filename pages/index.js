@@ -21,6 +21,7 @@ export default function Home() {
             titleComp="Scopri le città più visitate"
             subTitleComp="Lasciati ispirare dalle mete più ambite"
           />
+
           <FigurineContainer
             endPoint="activities"
             titleComp="Scopri le attività più ricercate"

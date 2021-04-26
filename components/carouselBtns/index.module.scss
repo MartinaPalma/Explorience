@@ -1,0 +1,9 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+
+.carouselBtns {
+  .pair {
+    @include flexCenter(space-between, center, row);
+    gap: 10px;
+  }
+}

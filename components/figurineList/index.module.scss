@@ -1,39 +1,60 @@
+@import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .figurineList {
-    &_title {
-        font-family: 'Reem Kufi', sans-serif;
-        font-size: 1.6rem;
-        margin: 0;
-        color: $dark_color;
+  &_title {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.6rem;
+    margin: 0;
+    color: $dark_color;
+  }
+  &_subtitle {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 0 15px 0;
+    color: #aaaaaa;
+  }
+  .info {
+    .carousel {
+      display: none;
     }
-    &_subtitle {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        margin: 0 0 15px 0;
-        color: #aaaaaa;
-    }
+  }
 }
 
 .scroll {
-    display: flex;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-    gap: 10px;
-    width: 100vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  width: 100vw;
+  scroll-snap-type: x mandatory;
+
+  > * {
+    scroll-snap-align: start;
+  }
 }
 
-@media (min-width: 992px) {
-    .figurineList {
-        &_title {
-            font-size: 2rem;
-        }
-        &_subtitle {
-            font-size: 1.6rem;
-            margin: -10px 0 26px 0;
-        }
-        .scroll {
-            padding-top: 15px;
-        }
+@media (min-width: 767px) {
+  .figurineList {
+    .info {
+      @include flexCenter(space-between, flex-start, row);
+
+      .carousel {
+        display: block;
+        margin-right: 50px;
+        align-self: center;
+      }
     }
+    &_title {
+      font-size: 2rem;
+    }
+    &_subtitle {
+      font-size: 1.6rem;
+      margin: -10px 0 26px 0;
+    }
+    .scroll {
+      padding-top: 15px;
+      overflow-x: hidden;
+    }
+  }
 }
