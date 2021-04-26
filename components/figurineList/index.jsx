@@ -2,6 +2,7 @@ import styles from './index.module.scss'
 import { useRef } from 'react'
 
 import CardCity from '../cardCity'
+import CardActivity from '../cardActivity'
 import CarouselBtns from '../carouselBtns'
 import Loader from '../loader'
 
@@ -11,7 +12,7 @@ const handleScroll = (direction, bindRef) => {
     : (bindRef.current.scrollLeft += 300)
 }
 
-const FigurineList = ({ figurines, titleComp, subTitleComp }) => {
+const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
   const scrollRef = useRef()
 
   return (
@@ -32,9 +33,15 @@ const FigurineList = ({ figurines, titleComp, subTitleComp }) => {
 
         <div className={styles.scroll} ref={scrollRef}>
           {figurines.length >= 1 ? (
-            figurines.map((figurine) => (
-              <CardCity data={figurine} key={figurine.uuid} />
-            ))
+            figurines
+              .filter((figurine) => figurine.cover_image_url)
+              .map((figurine) =>
+                endPoint === 'cities' ? (
+                  <CardCity data={figurine} key={figurine.uuid} />
+                ) : (
+                  <CardActivity data={figurine} key={figurine.uuid} />
+                )
+              )
           ) : (
             <Loader />
           )}

@@ -1,0 +1,200 @@
+@import '../../styles/scss/variables';
+@import '../../styles/scss/mixins';
+.CardActivity {
+  min-width: 270px;
+  max-width: 270px;
+  height: max-content;
+  position: relative;
+  color: $dark_color;
+  font-family: 'Baloo 2', sans-serif;
+  display: flex;
+  flex-direction: column;
+  &_image {
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 170px;
+    max-height: 170px;
+    object-fit: cover;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  &_details {
+    padding: 0 8px;
+    margin: 8px 0 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+  }
+  &_city {
+    margin: 0;
+    font-weight: normal;
+    font-family: 'Reem Kufi', sans-serif;
+    color: $primary_color;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+  }
+  &_star {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    &::after {
+      content: ' ★';
+      color: rgb(236, 191, 44);
+      font-size: 1rem;
+    }
+  }
+  &_title {
+    padding: 0 8px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0 0 6px 0;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    height: 40px;
+    overflow: hidden;
+  }
+  &_description {
+    height: 70px;
+    overflow: hidden;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: justify;
+  }
+  &_days {
+    margin: 6px 0;
+    padding: 0 8px;
+    font-size: 0.8rem;
+    color: #17171777;
+    font-weight: normal;
+    font-family: 'Reem Kufi', sans-serif;
+  }
+  &_info {
+    padding: 0 50px 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_price {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &_link {
+    cursor: pointer;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $primary_color;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $dark_color;
+    }
+  }
+}
+
+// Verticals
+.CardActivity_verticals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 8px;
+  width: 100%;
+  display: flex;
+}
+
+.arts_culture,
+.sightseeing,
+.food_wine,
+.entertainment,
+.sports,
+.adventure,
+.nightlife {
+  width: max-content;
+  height: 25px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  padding: 0 12px;
+  color: $light_color;
+  font-weight: normal;
+  text-transform: lowercase;
+  text-align: center;
+  font-family: 'Reem Kufi', sans-serif;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.arts_culture {
+  background: rgb(226, 92, 43);
+}
+
+.sightseeing {
+  background: rgb(75, 168, 226);
+}
+
+.food_wine {
+  background: rgb(182, 145, 255);
+}
+
+.entertainment {
+  background: lightseagreen;
+}
+
+.sports {
+  background: rgb(236, 103, 103);
+}
+
+.adventure {
+  background: rgb(54, 209, 62);
+}
+
+.nightlife {
+  background: orange;
+}
+
+@media (min-width: 992px) {
+  .CardActivity {
+    min-width: 300px;
+    max-width: 300px;
+    &_image {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: 200px;
+      max-height: 200px;
+    }
+    &_city {
+      font-size: 1rem;
+    }
+    &_star {
+      font-size: 1rem;
+      &::after {
+        font-size: 1.2rem;
+      }
+    }
+    &_title {
+      font-size: 0.9rem;
+      height: 50px;
+    }
+    &_description {
+      height: 75px;
+      font-size: 1rem;
+    }
+    &_days {
+      font-size: 0.9rem;
+    }
+    &_price {
+      font-size: 1.7rem;
+    }
+    &_link {
+      font-size: 1rem;
+      &:hover {
+        color: $dark_color;
+      }
+    }
+  }
+}

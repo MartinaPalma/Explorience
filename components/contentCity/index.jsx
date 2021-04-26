@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-import Figurine from '../figurine'
+import CardActivity from '../cardActivity'
 import Loader from '../loader'
 
 import { formatContentText } from '../../utils/utils'
@@ -22,7 +22,7 @@ const ContentCity = ({ name, content, activityID }) => {
       .get(
         `https://sandbox.musement.com/api/v3/cities/${
           cityID || activityID
-        }/activities.json?limit=100`,
+        }/activities.json?limit=10`,
         { headers: { 'Accept-Language': 'it-IT' } }
       )
       .then((res) => {
@@ -51,13 +51,7 @@ const ContentCity = ({ name, content, activityID }) => {
         <div className={styles.ContentCity_scroll}>
           {activities.length ? (
             activities.map((activity) => {
-              return (
-                <Figurine
-                  endPoint="activities"
-                  data={activity}
-                  key={activity.uuid}
-                />
-              )
+              return <CardActivity data={activity} key={activity.uuid} />
             })
           ) : (
             <Loader />

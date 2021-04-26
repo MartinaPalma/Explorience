@@ -23,7 +23,7 @@ const CardCity = ({ data }) => {
               className={styles.CardCity_image}
               src={
                 data.cover_image_url
-                  ? data.cover_image_url + '?fit=crop&h=225'
+                  ? data.cover_image_url + '?fit=crop&h=350'
                   : 'https://dummyimage.com/350.jpg'
               }
               alt={data.name}
