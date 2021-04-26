@@ -2,6 +2,7 @@
 @import '../../styles/scss/variables';
 
 .modal {
+  display: flex;
   position: fixed;
   top: 5%;
   right: 5%;
@@ -23,12 +24,6 @@
 
   p {
     color: $light_color;
-
-    &:before {
-      content: '🛒 ';
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
   }
 }
 
@@ -52,7 +47,7 @@
 
     content: 'x';
     color: $light_color;
-    font-family: 'Baloo 2';
+    font-family: $font_body;
     font-size: 1.5rem;
     text-shadow: 1px 1px 1px #17171775;
   }

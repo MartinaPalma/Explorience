@@ -4,3 +4,40 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin flex($flex, $justify, $align) {
+  display: flex;
+  flex-direction: $flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}

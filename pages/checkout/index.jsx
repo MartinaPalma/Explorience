@@ -1,14 +1,17 @@
 import styles from './index.module.scss'
-import CheckoutForm from '../../components/checkoutForm'
-import CheckoutImage from '../../components/checkoutImage'
+import { useRouter } from 'next/router'
+import { Layout, CheckoutImage, CheckoutForm } from '../../components'
 const Checkout = () => {
+  const router = useRouter()
   return (
-    <div className={styles.Checkout}>
-      <div className={styles.Checkout_wrapper}>
-        <CheckoutImage />
-        <CheckoutForm />
+    <Layout isArrow={true} onHandle={router.back}>
+      <div className={styles.Checkout}>
+        <div className={styles.Checkout_wrapper}>
+          <CheckoutImage />
+          <CheckoutForm />
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

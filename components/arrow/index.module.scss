@@ -1,55 +1,14 @@
 @import '../../styles/scss/variables';
 .Arrow {
   transition: 0.5s all ease;
-  position: absolute;
   display: flex;
-  top: 10px;
-  left: 10px;
   cursor: pointer;
-  z-index: 2;
   &_icon {
     width: 28px !important;
-    filter: drop-shadow(2px 2px 2px #17171750);
+    filter: drop-shadow(2px 2px 2px #171717a8);
     &:hover,
     &:focus {
       filter: drop-shadow(2px 2px 1px #17171780);
-    }
-  }
-}
-
-.backCity,
-.backActivity {
-  top: 15px;
-  left: 15px;
-}
-
-@media (min-width: 992px) {
-  .Arrow {
-    background-color: #f1f1f135;
-    border-radius: 50%;
-    padding: 8px;
-    &_icon {
-      width: 25px !important;
-      &:hover,
-      &:focus {
-        filter: none;
-      }
-    }
-  }
-  .backCity {
-    background-color: #17171750;
-    top: 25px;
-    left: 25px;
-    &:hover {
-      background-color: #17171760;
-    }
-  }
-  .backActivity {
-    background-color: #f1f1f135;
-    top: 25px;
-    left: 25px;
-    &:hover {
-      background-color: #f1f1f160;
     }
   }
 }

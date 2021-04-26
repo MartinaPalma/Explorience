@@ -2,13 +2,5 @@
 @import '../../styles/scss/variables';
 
 .Layout {
-  @include flexCenter(center, space-between, column);
-  margin: 0;
-  font-family: 'Reem Kufi', sans-serif;
-  padding: 0 25px;
-
-  @media (min-width: 676px) {
-    background: $light_color;
-    padding: 0 100px;
-  }
+  @include flex(column, center, space-between);
 }

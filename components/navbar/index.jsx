@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styles from './index.module.scss'
+import Arrow from '../arrow'
 
-const Navbar = () => {
+const Navbar = ({ onHandle, isArrow }) => {
   const [scrollPosY, setScrollPosY] = useState(0)
 
   useEffect(() => {
@@ -13,10 +14,20 @@ const Navbar = () => {
     <div
       className={`${styles.Navbar} ${scrollPosY <= 100 && styles.transparent}`}
     >
-      <Link href="/">
-        <img className={styles.logo} src="/logo-light.svg" alt="logo" />
-      </Link>
-      {/* <h3 className={styles.logo}>Explorience</h3> */}
+      <div
+        className={`${styles.Navbar_container} ${isArrow && styles.padding} `}
+      >
+        <div className={styles.Navbar_links}>
+          {isArrow && <Arrow onHandle={onHandle} />}
+          <Link href="/">
+            <img className={styles.Navbar_logo} src="/logo.svg" alt="logo" />
+          </Link>
+        </div>
+        <div className={styles.Navbar_info}>
+          <img className={styles.Navbar_cart} src="/cart.svg" alt="logo" />
+          <span className={styles.Navbar_qty}>45</span>
+        </div>
+      </div>
     </div>
   )
 }

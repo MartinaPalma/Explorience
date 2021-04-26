@@ -1,40 +1,39 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .CheckoutImage {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 992px) {
-    .CheckoutImage {
-        width: 475px;
-        height: 450px;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        background-color: $light_color;
-        font-family: 'Reem Kufi', sans-serif;
-        &_text {
-            font-size: 1.2rem;
-            margin: 55px 0 0 45px;
-        }
-        &_totalPrice {
-            margin: 0;
-            transform: translate(10%, 40%);
-            font-size: 2.4rem;
-            font-weight: bold;
-        }
-        &_totalProducts {
-            font-family: 'Baloo 2', sans-serif;
-            transform: translate(10%, 50%);
-            color: $primary_color;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-        &_image {
-            align-self: center;
-            width: 425px;
-            object-fit: scale-down;
-        }
+  .CheckoutImage {
+    width: 475px;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $light_color;
+    font-family: $font_heading;
+    &_text {
+      font-size: 1.2rem;
+      margin: 55px 0 0 45px;
     }
+    &_totalPrice {
+      margin: 0;
+      transform: translate(10%, 40%);
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+    &_totalProducts {
+      transform: translate(10%, 80%);
+      color: $primary_color;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    &_image {
+      align-self: center;
+      width: 425px;
+      object-fit: scale-down;
+    }
+  }
 }

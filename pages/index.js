@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
-import Layout from '../components/layout'
-import { HeaderHome } from '../components'
-import FigurineContainer from '../components/figurineContainer'
+import { HeaderHome, Layout, FigurineContainer } from '../components'
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout isArrow={false}>
       <div className={styles.Home}>
         <Head>
           <title>Explorience</title>

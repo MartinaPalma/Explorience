@@ -1,60 +1,57 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .HeaderActivity {
-    width: 100vw;
-    height: 300px;
-    position: relative;
-    &_bgr {
-        display: none;
+  width: 100vw;
+  height: 300px;
+  position: relative;
+  @include desktop {
+    height: 535px;
+  }
+  &_bgr {
+    display: none;
+    @include desktop {
+      display: block;
+      height: 400px;
+      background-color: $primary_color;
     }
-    &_image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
+  }
+  &_image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    @include desktop {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      width: 980px;
+      height: 350px;
+      top: 100px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      filter: contrast(1.2) brightness(82%);
     }
-    &_title {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto 15px;
-        top: 210px;
-        background-color: $light_color;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        width: fit-content;
-        font-size: 1.2rem;
-        padding: 10px;
-        border-radius: 8px;
-        text-transform: uppercase;
-        text-align: center;
+  }
+  &_title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto 15px;
+    top: 210px;
+    background-color: $light_color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: fit-content;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    @include desktop {
+      margin: auto;
+      width: 660px;
+      padding: 15px;
+      top: 415px;
+      font-size: 1.6rem;
     }
-}
-
-@media (min-width: 992px) {
-    .HeaderActivity {
-        height: 535px;
-        &_bgr {
-            display: block;
-            height: 400px;
-            background-color: $primary_color;
-        }
-        &_image {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-            width: 980px;
-            height: 350px;
-            top: 100px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-            filter: contrast(1.2) brightness(82%);
-        }
-        &_title {
-            margin: auto;
-            width: 660px;
-            padding: 15px;
-            top: 415px;
-            font-size: 1.6rem;
-        }
-    }
+  }
 }

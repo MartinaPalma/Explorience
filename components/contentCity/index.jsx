@@ -41,7 +41,7 @@ const ContentCity = ({ name, content, activityID }) => {
         <p className={styles.ContentCity_text}>{formatContentText(content)}</p>
         <h4 className={styles.ContentCity_experiences}>Esperienza</h4>
         <h5 className={styles.ContentCity_experiencesSubtitle}>
-          Da Esperire: dimostrare, dare prova{' '}
+          Da Esperire: dimostrare, dare prova
         </h5>
         <em className={styles.ContentCity_quote}>
           Credo oggi aver esperto Ch’essere amato per valore io merto

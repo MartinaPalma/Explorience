@@ -9,7 +9,7 @@ const Modal = () => {
 
   setTimeout(() => {
     context.dispatch({ type: 'VISIBLE_MODAL', payload: false })
-  }, 3000)
+  }, 5000)
 
   return (
     <div
@@ -18,7 +18,7 @@ const Modal = () => {
         context.dispatch({ type: 'VISIBLE_MODAL', payload: false })
       }
     >
-      <p>Aggiunto al carrello!</p>
+      <img src="/cart.svg" alt="cart" /> <p>Aggiunto al carrello!</p>
       <div className={styles.closeBtn}></div>
     </div>
   )

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import styles from './index.module.scss'
-import { HeaderCity, ContentCity, Arrow } from '../../../components'
+import { HeaderCity, ContentCity, Navbar } from '../../../components'
 import citiesList from '../../../services/cityList.json'
 import { getCity } from '../../../utils/utils.js'
 import { useRouter } from 'next/router'
@@ -10,10 +10,9 @@ const City = ({ city }) => {
 
   return (
     <>
+      <Navbar onHandle={router.back} isArrow={true} />
       {city && (
         <div className={styles.City}>
-          <Arrow isBackCity={true} onHandle={router.back} />
-
           <HeaderCity
             image={city.cover_image_url + '?fit=crop&h=900'}
             name={city.name}

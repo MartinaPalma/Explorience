@@ -1,13 +1,8 @@
 import styles from './index.module.scss'
 
-const Arrow = ({ isBackCity, onHandle }) => {
+const Arrow = ({ onHandle }) => {
   return (
-    <div
-      className={`${styles.Arrow} ${
-        isBackCity ? styles.backCity : styles.backActivity
-      }`}
-      onClick={onHandle}
-    >
+    <div className={styles.Arrow} onClick={onHandle}>
       <img className={styles.Arrow_icon} src="/arrow.svg" alt="Explorience" />
     </div>
   )

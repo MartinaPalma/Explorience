@@ -1,60 +1,64 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .figurineList {
+  width: 100%;
+  &_info {
+    @include tablet {
+      @include flex(row, space-between, flex-start);
+    }
+  }
+
   &_title {
-    font-family: 'Reem Kufi', sans-serif;
-    font-size: 1.6rem;
+    font-family: $font_heading;
+    font-size: 1.2rem;
     margin: 0;
     color: $dark_color;
+    @include tablet {
+      font-size: 1.5rem;
+    }
+    @include desktop {
+      font-size: 1.8rem;
+    }
   }
   &_subtitle {
-    font-family: 'Baloo 2', sans-serif;
-    font-size: 1rem;
+    font-size: 0.92rem;
     font-weight: normal;
-    margin: 0 0 15px 0;
-    color: #aaaaaa;
-  }
-  .info {
-    .carousel {
-      display: none;
+    color: $gray_lighter;
+    margin: 3px 0 15px;
+    @include tablet {
+      font-size: 1.1rem;
+      margin: 3px 0 10px;
+    }
+    @include desktop {
+      font-size: 1.2rem;
     }
   }
-}
 
-.scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 10px;
-  width: 100vw;
-  scroll-snap-type: x mandatory;
-
-  > * {
-    scroll-snap-align: start;
+  &_carousel {
+    display: none;
+    @include tablet {
+      display: block;
+      // margin-top: 50px;
+      align-self: center;
+    }
   }
-}
 
-@media (min-width: 767px) {
-  .figurineList {
-    .info {
-      @include flexCenter(space-between, flex-start, row);
-
-      .carousel {
-        display: block;
-        margin-right: 50px;
-        align-self: center;
-      }
-    }
-    &_title {
-      font-size: 2rem;
-    }
-    &_subtitle {
-      font-size: 1.6rem;
-      margin: -10px 0 26px 0;
-    }
-    .scroll {
-      padding-top: 15px;
+  &_scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    @include tablet {
       overflow-x: hidden;
+      padding-top: 15px;
     }
+
+    > * {
+      scroll-snap-align: start;
+    }
+  }
+  .gap {
+    gap: 20px;
   }
 }

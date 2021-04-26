@@ -18,12 +18,12 @@ const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
   return (
     <>
       <div className={styles.figurineList}>
-        <div className={styles.info}>
+        <div className={styles.figurineList_info}>
           <div className={styles.texts}>
             <h3 className={styles.figurineList_title}>{titleComp}</h3>
             <h4 className={styles.figurineList_subtitle}>{subTitleComp}</h4>
           </div>
-          <div className={styles.carousel}>
+          <div className={styles.figurineList_carousel}>
             <CarouselBtns
               onHandleL={() => handleScroll('left', scrollRef)}
               onHandleR={() => handleScroll('right', scrollRef)}
@@ -31,7 +31,12 @@ const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
           </div>
         </div>
 
-        <div className={styles.scroll} ref={scrollRef}>
+        <div
+          className={`${styles.figurineList_scroll} ${
+            endPoint !== 'cities' && styles.gap
+          }`}
+          ref={scrollRef}
+        >
           {figurines.length >= 1 ? (
             figurines
               .filter((figurine) => figurine.cover_image_url)
