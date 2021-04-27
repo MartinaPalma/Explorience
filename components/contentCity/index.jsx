@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-import CardActivity from '../cardActivity'
+import FigurineList from '../figurineList'
 import Loader from '../loader'
 
 import { formatContentText } from '../../utils/utils'
@@ -50,9 +50,7 @@ const ContentCity = ({ name, content, activityID }) => {
       <div className={styles.ContentCity_activities}>
         <div className={styles.ContentCity_scroll}>
           {activities.length ? (
-            activities.map((activity) => {
-              return <CardActivity data={activity} key={activity.uuid} />
-            })
+            <FigurineList figurines={activities} endPoint="activities" />
           ) : (
             <Loader />
           )}

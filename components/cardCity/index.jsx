@@ -10,7 +10,7 @@ const CardCity = ({ data }) => {
         <div className={styles.CardCity}>
           <Link
             href={{
-              pathname: `/city/${data.id}`,
+              pathname: `${data.id ? `/city/${data.id}` : `/404`}`,
               query: {
                 id: data.id,
                 uuid: data.uuid,
@@ -34,7 +34,7 @@ const CardCity = ({ data }) => {
             <div className={styles.CardCity_title}>
               <h5 className={styles.CardCity_name}>{data.name}</h5>
               <p className={styles.CardCity_activities}>
-                {data.activities_count} attività
+                {data.activities_count && data.activities_count + ' attività'}
               </p>
             </div>
             <img

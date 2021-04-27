@@ -18,7 +18,7 @@ const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
   return (
     <>
       <div className={styles.figurineList}>
-        <div className={styles.figurineList_info}>
+        <div className={styles.info_city}>
           <div className={styles.texts}>
             <h3 className={styles.figurineList_title}>{titleComp}</h3>
             <h4 className={styles.figurineList_subtitle}>{subTitleComp}</h4>
@@ -41,10 +41,10 @@ const FigurineList = ({ endPoint, figurines, titleComp, subTitleComp }) => {
             figurines
               .filter((figurine) => figurine.cover_image_url)
               .map((figurine) =>
-                endPoint === 'cities' ? (
-                  <CardCity data={figurine} key={figurine.uuid} />
-                ) : (
+                endPoint === 'activities' ? (
                   <CardActivity data={figurine} key={figurine.uuid} />
+                ) : (
+                  <CardCity data={figurine} key={figurine.uuid} />
                 )
               )
           ) : (

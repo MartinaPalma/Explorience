@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
 import { HeaderHome, Layout, FigurineContainer } from '../components'
+import vintageCities from '../utils/vintageCities.js'
+import spaceCities from '../utils/spaceCities.js'
 
 export default function Home() {
   return (
@@ -24,6 +26,18 @@ export default function Home() {
             endPoint="activities"
             titleComp="Scopri le attività più ricercate"
             subTitleComp="Lasciati trasportare dalle attività più ambite"
+          />
+
+          <FigurineContainer
+            endPoint={vintageCities}
+            titleComp="Il classico intramontabile"
+            subTitleComp="Hai mai sentito: il classico non lo batte nessuno?"
+          />
+
+          <FigurineContainer
+            endPoint={spaceCities}
+            titleComp="Cose fuori dal mondo"
+            subTitleComp="Il futuro ci riserva qualcosa di sorprendente!"
           />
         </main>
       </div>

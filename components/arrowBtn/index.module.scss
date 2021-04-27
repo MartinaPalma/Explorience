@@ -2,6 +2,7 @@
 @import '../../styles/scss/variables';
 
 .arrowBtn {
+  margin: 5px 5px 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +11,7 @@
 
   border: 1px solid $light_color;
   border-radius: 100%;
-  box-shadow: 0 0 22px 3px #17171730;
+  box-shadow: 0 0 6px 2px #17171730;
 
   color: $dark_color;
   outline: none;

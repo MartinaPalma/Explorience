@@ -1,6 +1,10 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .figurineList {
+  .info_city {
+    display: flex;
+    justify-content: space-between;
+  }
   width: 100%;
   &_info {
     @include tablet {

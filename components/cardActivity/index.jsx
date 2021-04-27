@@ -13,7 +13,7 @@ const CardActivity = ({ data }) => {
       {data ? (
         <div className={styles.CardActivity}>
           <div className={styles.CardActivity_verticals}>
-            {data?.verticals.map((vertical, i) => {
+            {data?.verticals?.map((vertical, i) => {
               return (
                 <div
                   className={styles[switchClass(vertical?.id)]}
