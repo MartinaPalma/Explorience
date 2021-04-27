@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ numProducts, totalCart }) => {
   return (
     <div className={styles.CheckoutForm}>
       <h1 className={styles.CheckoutForm_title}>Dettagli Pagamento</h1>
@@ -82,10 +82,11 @@ const CheckoutForm = () => {
         <div className={styles.buttons}>
           <button className={styles.CheckoutForm_btnCart}>
             <img src="/cart.svg" alt="cart" />
-            <div className={styles.CheckoutForm_number}>11</div>
+            <div className={styles.CheckoutForm_number}>{numProducts}</div>
           </button>
           <button className={styles.CheckoutForm_button} type="button">
-            Acquista ora <span>2506 €</span>
+            Acquista ora{' '}
+            <span className={styles.CheckoutForm_totalCart}>{totalCart}</span>
           </button>
         </div>
       </form>
