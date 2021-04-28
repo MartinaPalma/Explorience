@@ -1,0 +1,61 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+.Input {
+    width: 100%;
+    height: 45px;
+    margin-bottom: 35px;
+    position: relative;
+    &_text {
+        height: 100%;
+        padding: 0 8px;
+        padding-top: 10px;
+        border: none;
+        background: none;
+        outline: none;
+        color: $light_color;
+        font-size: 1rem;
+        font-family: $font_body;
+        box-shadow: 0 4px 5px -5px $primary_color;
+        width: 100%;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: $light_color;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    }
+    &_label {
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 2px solid $primary_color;
+    }
+    &_span {
+        font-size: 0.5rem;
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+        color: $primary_color;
+        font-family: $font_heading;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &_text:focus+&_label &_span,
+    &_text:valid+&_label &_span {
+        transform: translateY(-250%);
+        font-size: 0.6rem;
+    }
+}

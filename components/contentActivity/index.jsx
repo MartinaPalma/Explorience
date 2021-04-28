@@ -14,6 +14,9 @@ const ContentActivity = ({ activity }) => {
           title={activity.title}
           price={activity.retail_price.value}
           reviews={activity.reviews_avg}
+          activityType={activity?.verticals[0]?.name}
+          city={activity.city.name}
+          id={activity.uuid}
         />
       </div>
     </div>

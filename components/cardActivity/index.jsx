@@ -4,6 +4,7 @@ import {
   encodeTitleToURL,
   formatDescriptionActivity,
   switchClass,
+  turnIntoPrice,
 } from '../../utils/utils'
 import Loader from '../loader'
 
@@ -60,7 +61,7 @@ const CardActivity = ({ data }) => {
           <p className={styles.CardActivity_days}>{data.operational_days}</p>
           <div className={styles.CardActivity_info}>
             <p className={styles.CardActivity_price}>
-              {data.retail_price.value} €
+              {turnIntoPrice(data.retail_price.value)}
             </p>
             <Link
               href={{

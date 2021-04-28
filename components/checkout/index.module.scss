@@ -1,0 +1,93 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+.Checkout {
+    width: 100vw;
+    height: 80vh;
+    background-color: $dark_color;
+    @include flex(column, center, center);
+    @include desktop {
+        width: 496px;
+        min-height: 500px;
+        max-height: 500px;
+        margin-bottom: 0;
+    }
+    &_title {
+        font-size: 1.5rem;
+        font-family: $font_heading;
+        color: $light_color;
+        text-align: center;
+        margin-bottom: 28px;
+        @include desktop {
+            font-size: 1.9rem;
+            margin-top: 0px;
+            margin-bottom: 28px;
+        }
+    }
+    &_form {
+        margin: 0 auto;
+        width: 70%;
+        @include flexCenter();
+        @include desktop {
+            width: 60%;
+        }
+    }
+    &_details {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    &_wrapperDate {
+        width: 112px;
+        >span {
+            color: $primary_color;
+            font-family: $font_body;
+            font-size: 1.3rem;
+        }
+    }
+    &_wrapperCVV {
+        width: 20%;
+    }
+    &_label {
+        font-family: $font_heading;
+        color: $primary_color;
+        font-weight: bold;
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        margin-right: 18px;
+    }
+    &_input {
+        border: none;
+        background: none;
+        outline: none;
+        color: $light_color;
+        font-size: 1rem;
+        font-family: $font_body;
+        box-shadow: 0 4px 5px -5px $primary_color;
+        width: 100%;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: $light_color;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        border-bottom: 2px solid $primary_color;
+        color: $light_color;
+        padding: 0;
+        @include input-placeholder {
+            color: $primary_color;
+        }
+    }
+    &_inputDate {
+        width: 50px;
+        text-align: center;
+    }
+}

@@ -33,6 +33,25 @@ const reducer = (state, action) => {
           visible: action.payload,
         },
       }
+    case 'ADD_PRODUCT_TO_LIST':
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          listProduct: [action.payload, ...state.cart.listProduct],
+        },
+      }
+    case 'REMOVE_ITEM_CART':
+      return {
+        ...state,
+        cart: {
+          totalCart: (store.cart.totalCart -= action.payload.price),
+          numProducts: (store.cart.numProducts -= 1),
+          listProduct: state.cart.listProduct.filter(
+            (item) => item.id !== action.payload.id
+          ),
+        },
+      }
     default:
       return state
   }

@@ -1,38 +1,27 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
-.Checkout {
-  position: relative;
-  width: 100vw;
-  z-index: 1;
-
-  @include desktop {
+.Cart {
     width: 100vw;
-    height: 80vh;
+    height: max-content;
+    position: relative;
+    z-index: 3;
     @include flex(column, center, center);
-  }
-  &_wrapper {
-    @include flex(column-reverse, center, center);
-    background-color: $dark_color;
-    height: min-content;
-    width: min-content;
-    box-shadow: 0 0 40px 2px #1717174d;
     @include desktop {
-      flex-direction: row;
+        flex-direction: row;
+        height: 100vh;
+        box-shadow: 0 0 40px 2px #1717174d;
     }
-  }
 }
 
 .background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  background: url('https://images.pexels.com/photos/5264071/pexels-photo-5264071.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=720%27');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  filter: grayscale(0.3) contrast(1.2) brightness(70%) blur(3px);
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('https://images.pexels.com/photos/5264071/pexels-photo-5264071.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=600&w=720%27');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(0.3) contrast(1.2) brightness(70%) blur(3px);
+    z-index: 0;
 }

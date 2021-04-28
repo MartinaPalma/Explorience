@@ -1,158 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
-
 .footer {
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  margin-top: 50px;
-  background: #f1f1f1;
-
-  .wrapper {
-    padding: 0 6vw;
-    @include desktop {
-      padding: 0 8vw;
-    }
-  }
-
-  color: darkslategrey;
-  hr {
-    margin: 20px 0;
-    width: 100%;
-    opacity: 0.15;
-  }
-  p {
-    font-size: 0.8rem;
-    color: grey;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 10px 0;
-    padding: 0;
-    text-align: left;
-
-    li {
-      margin-bottom: 4px;
-      color: grey;
-
-      &:hover {
-        color: $dark_color;
-        cursor: pointer;
-      }
-    }
-  }
-  .newsletter {
-    @include flex(column, space-around, center);
-
-    .text {
-      margin: 0;
-
-      > * {
-        margin-top: 15px;
-      }
-    }
-
-    .input {
-      &:before {
-        position: relative;
-        top: 39px;
-        left: 10px;
-        content: '✉️';
-        opacity: 0.7;
-      }
-      input {
-        padding: 18px 50px;
-        @include desktop {
-          padding: 18px 160px 18px 40px;
-        }
-        border: 0;
-        border-radius: 4px;
-        color: darkslategrey;
-
-        box-shadow: 0 0 6px #17171735;
-        outline: none;
-      }
-
-      button {
-        margin-left: -100px;
-        padding: 6px 24px;
-
-        color: $light_color;
-        border: none;
-        border-radius: 4px;
-        background: $primary_color;
-
-        font-size: 0.7rem;
-        font-weight: bold;
-        outline: none;
-        cursor: pointer;
-
-        &:hover,
-        &:focus {
-          background: rgb(39, 145, 194);
-        }
-        &:active {
-          box-shadow: inset 0 0 6px #17171760;
-        }
-      }
-    }
-    @media (min-width: 780px) {
-      flex-direction: row;
-      h3 {
-        margin: 4px 0;
-      }
-      > * {
-        margin-top: 0;
-      }
-    }
-  }
-
-  .links {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    @include tablet {
-      gap: 50px;
-    }
-
-    .who {
-      display: none;
-      @include tablet {
-        display: block;
-      }
-      > p {
-        text-align: center;
-      }
-      .logo {
-        width: 160px;
-
-        cursor: pointer;
-        user-select: none;
-        &:focus,
-        &:active {
-          filter: saturate(4) contrast(2);
+    flex-direction: column;
+    z-index: 1;
+    background: #f1f1f1;
+    .wrapper {
+        padding: 0 6vw;
+        @include desktop {
+            padding: 0 8vw;
         }
-      }
     }
-  }
+    color: darkslategrey;
+    hr {
+        margin: 20px 0;
+        width: 100%;
+        opacity: 0.15;
+    }
+    p {
+        font-size: 0.8rem;
+        color: grey;
+    }
+    ul {
+        list-style-type: none;
+        margin: 10px 0;
+        padding: 0;
+        text-align: left;
+        li {
+            margin-bottom: 4px;
+            color: grey;
+            &:hover {
+                color: $dark_color;
+                cursor: pointer;
+            }
+        }
+    }
+    .newsletter {
+        @include flex(column,
+        space-around,
+        center);
+        .text {
+            margin: 0;
+            >* {
+                margin-top: 15px;
+            }
+        }
+        .input {
+            &:before {
+                position: relative;
+                top: 39px;
+                left: 10px;
+                content: '✉️';
+                opacity: 0.7;
+            }
+            input {
+                padding: 18px 50px;
+                @include desktop {
+                    padding: 18px 160px 18px 40px;
+                }
+                border: 0;
+                border-radius: 4px;
+                color: darkslategrey;
+                box-shadow: 0 0 6px #17171735;
+                outline: none;
+            }
+            button {
+                margin-left: -100px;
+                padding: 6px 24px;
+                color: $light_color;
+                border: none;
+                border-radius: 4px;
+                background: $primary_color;
+                font-size: 0.7rem;
+                font-weight: bold;
+                outline: none;
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    background: rgb(39, 145, 194);
+                }
+                &:active {
+                    box-shadow: inset 0 0 6px #17171760;
+                }
+            }
+        }
+        @media (min-width: 780px) {
+            flex-direction: row;
+            h3 {
+                margin: 4px 0;
+            }
+            >* {
+                margin-top: 0;
+            }
+        }
+    }
+    .links {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        @include tablet {
+            gap: 50px;
+        }
+        .who {
+            display: none;
+            @include tablet {
+                display: block;
+            }
+            >p {
+                text-align: center;
+            }
+            .logo {
+                width: 160px;
+                cursor: pointer;
+                user-select: none;
+                &:focus,
+                &:active {
+                    filter: saturate(4) contrast(2);
+                }
+            }
+        }
+    }
 }
 
 .info {
-  border-top: 1px solid rgba(15, 15, 15, 0.05);
-  margin-top: 30px;
-  text-align: center;
-  p {
-    color: rgb(180, 180, 180);
-    font-size: 0.9rem;
-
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      color: grey;
+    border-top: 1px solid rgba(15, 15, 15, 0.05);
+    margin-top: 30px;
+    text-align: center;
+    p {
+        color: rgb(180, 180, 180);
+        font-size: 0.9rem;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            color: grey;
+        }
     }
-  }
 }

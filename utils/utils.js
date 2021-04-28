@@ -36,6 +36,12 @@ export const formatDescriptionActivity = (description) => {
   return description
 }
 
+// Turn a number value into EU currency locale
+export const turnIntoPrice = (number) =>
+  new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(
+    number
+  )
+
 export const switchClass = (ID) => {
   switch (ID) {
     case 1:
