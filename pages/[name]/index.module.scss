@@ -1,9 +1,9 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .ActivityPage {
-  background-color: $light_color;
+    background-color: $light_color;
 }
 
 .loading {
-  @include flexCenter();
+    @include flexCenter();
 }

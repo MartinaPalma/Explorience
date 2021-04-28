@@ -1,0 +1,150 @@
+@import '../../styles/scss/mixins';
+@import '../../styles/scss/variables';
+.InfoActivity {
+  width: 100%;
+  color: $dark_color;
+  padding: 5px 18px;
+  display: flex;
+  flex-direction: column-reverse;
+  @include desktop {
+    padding: 0;
+    z-index: 2;
+    width: 50%;
+    flex-direction: column;
+  }
+  // .map {
+  //   width: 100%;
+  //   height: 150px;
+  //   background-color: $dark_color;
+  //   @include desktop {
+  //     height: 300px;
+  //     margin-bottom: 50px;
+  //   }
+  // }
+  &_container {
+    @include flex(row, center, center);
+    gap: 3vw;
+    margin-bottom: 15px;
+  }
+  &_wrapperIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    > p {
+      margin: 4px 0 0;
+      text-align: center;
+      font-size: $detailsFont_mobile;
+      color: #171717c5;
+    }
+    @include desktop {
+      width: 100px;
+      height: 90px;
+    }
+  }
+  &_icon {
+    width: 35px;
+    @include desktop {
+      width: 50px;
+    }
+  }
+  &_numbers {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    @include desktop {
+      margin: 50px 0;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &_title {
+    font-family: $font_heading;
+    font-size: 1.2rem;
+    margin: 0;
+    @include desktop {
+      display: none;
+    }
+  }
+  &_star {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    &::after {
+      content: ' ★';
+      color: rgb(236, 191, 44);
+    }
+    @include desktop {
+      font-size: 1.8rem;
+      margin-right: 10px;
+      padding-bottom: 30px;
+    }
+  }
+  &_sell {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 60px;
+    background-color: $light_color;
+    box-shadow: 0 0 8px 2px #17171725;
+    @include flex(column, center, center);
+    @include desktop {
+      position: static;
+      width: max-content;
+      box-shadow: none;
+      background: none;
+      height: max-content;
+    }
+  }
+  &_price {
+    display: none;
+    @include desktop {
+      display: block;
+      width: 100%;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+      text-align: center;
+      font-size: 2.3rem;
+    }
+  }
+  &_btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-family: $font_heading;
+    font-weight: bold;
+    background: $primary_lighter;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 8px $primary_color;
+    transition: $transition;
+    color: $light_color;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0px 10px $primary_darker;
+    }
+    &:active {
+      box-shadow: inset 0px 0px 15px $primary_darker;
+    }
+    @include desktop {
+      font-size: 1.2rem;
+    }
+  }
+  &_priceBtn {
+    &::after {
+      content: ' €';
+    }
+    margin-left: 10px;
+    @include desktop {
+      display: none;
+    }
+  }
+  .opacity {
+    opacity: 0.25;
+  }
+}

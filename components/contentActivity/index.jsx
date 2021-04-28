@@ -1,24 +1,16 @@
 import styles from './index.module.scss'
-import ActivityCardPrice from '../activityCardPrice'
 
 const ContentActivity = ({ activity }) => {
   return (
     <div className={styles.ContentActivity}>
-      <div className={styles.ContentActivity_text}>
-        <h2 className={styles.ContentActivity_title}>Cosa aspettarsi</h2>
-        <p className={styles.ContentActivity_description}> {activity.about}</p>
-      </div>
-      <div className={styles.ContentActivity_card}>
-        <ActivityCardPrice
-          image={activity.cover_image_url}
-          title={activity.title}
-          price={activity.retail_price.value}
-          reviews={activity.reviews_avg}
-          activityType={activity?.verticals[0]?.name}
-          city={activity.city.name}
-          id={activity.uuid}
-        />
-      </div>
+      <h2 className={styles.ContentActivity_title}>{activity.title}</h2>
+      <h2 className={styles.ContentActivity_city}>{activity.city.name}</h2>
+      <p className={styles.ContentActivity_description}>
+        {activity.description}
+      </p>
+      <h3 className={styles.ContentActivity_subtitle}>Cosa aspettarsi</h3>
+      <p className={styles.ContentActivity_about}> {activity.about}</p>
+      <p className={styles.ContentActivity_days}>{activity.operational_days}</p>
     </div>
   )
 }
