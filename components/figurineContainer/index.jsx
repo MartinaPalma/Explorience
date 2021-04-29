@@ -9,7 +9,7 @@ const FigurineContainer = ({ endPoint, titleComp, subTitleComp }) => {
   useEffect(() => {
     if (endPoint === 'cities' || endPoint === 'activities') {
       axios
-        .get(`https://sandbox.musement.com/api/v3/${endPoint}.json?limit=10`, {
+        .get(`https://sandbox.musement.com/api/v3/${endPoint}.json?limit=14`, {
           headers: { 'Accept-Language': 'it-IT' },
         })
         .then(({ data }) => {
