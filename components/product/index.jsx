@@ -10,7 +10,11 @@ const Product = ({ product }) => {
   return (
     <div className={styles.Product}>
       <div className={styles.Product_wrapper}>
-        <img src="/location.svg" alt="" className={styles.Product_icon} />
+        <img
+          src="/location.svg"
+          alt="location"
+          className={styles.Product_icon}
+        />
         <p className={styles.Product_name}>{product.title}</p>
       </div>
       <div className={styles.Product_info}>
