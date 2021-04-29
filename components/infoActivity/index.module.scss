@@ -36,6 +36,7 @@
   }
   &_icon {
     width: 35px;
+    margin: 0;
     @include desktop {
       width: 50px;
     }
