@@ -23,23 +23,21 @@ const ActivityPage = ({ activity }) => {
   )
 }
 
-export default ActivityPage
-
-export async function getServerSideProps({ query }) {
-  let data = []
+ActivityPage.getInitialProps = async (ctx) => {
+  let res = []
 
   try {
-    data = await axios.get(
-      `https://sandbox.musement.com/api/v3/activities/${query.uuid}`,
+    res = await axios.get(
+      `https://sandbox.musement.com/api/v3/activities/${ctx.query.uuid}`,
       { headers: { 'Accept-Language': 'it-IT' } }
     )
   } catch (error) {
-    data = { data: '' }
+    res = { data: '' }
   }
 
   return {
-    props: {
-      activity: data.data,
-    },
+    activity: res.data,
   }
 }
+
+export default ActivityPage

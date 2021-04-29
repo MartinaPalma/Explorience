@@ -8,9 +8,6 @@ const CartList = ({ numProducts, totalCart, listProduct }) => {
     <div className={styles.CartList}>
       <h2 className={styles.CartList_title}>Attività acquistate</h2>
       <div className={styles.CartList_list}>
-        {/* {data.map((product) => {
-          return <Product key={product.id} product={product} />
-        })} */}
         {listProduct.length ? (
           listProduct.map((product, i) => (
             <Product key={product.id + i} product={product} />

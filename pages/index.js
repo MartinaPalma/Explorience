@@ -10,7 +10,17 @@ export default function Home() {
       <div className={styles.Home}>
         <Head>
           <title>Explorience</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/logo.svg" />
+          <meta charset="UTF-8" />
+          <meta
+            name="description"
+            content="Le mete dei tuoi sogni sono il percorso del nostro lavoro! Explorience offre servizi unici a prova di esploratore!"
+          />
+          <meta
+            name="keywords"
+            content="explorazione, viaggi, turismo, viaggiare, explorience, divertimento, esperienza, volare, sognare"
+          />
+          <meta name="author" content="Explorience" />
         </Head>
 
         <HeaderHome />

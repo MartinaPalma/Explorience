@@ -29,20 +29,17 @@ const City = ({ city }) => {
   )
 }
 
-export default City
-
-export async function getServerSideProps(context) {
-  const resCity = await axios.get(
+City.getInitialProps = async (ctx) => {
+  const res = await axios.get(
     `https://sandbox.musement.com/api/v3/cities/${
-      getCity(context.query.name, citiesList)[1]
+      getCity(ctx.query.name, citiesList)[1]
     }`,
     { headers: { 'Accept-Language': 'it-IT' } }
   )
 
   return {
-    props: {
-      city: resCity.data,
-      query: context.query,
-    },
+    city: res.data,
   }
 }
+
+export default City

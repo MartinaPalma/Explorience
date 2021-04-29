@@ -16,10 +16,16 @@ const Page404 = ({}) => {
       </div>
       <div className={styles.illustration}>
         <div className={styles.cloud}>
-          <img src="https://i.pinimg.com/originals/19/8d/ae/198daeda14097d45e417e62ff283f10e.png" />
+          <img
+            src="https://i.pinimg.com/originals/19/8d/ae/198daeda14097d45e417e62ff283f10e.png"
+            alt="cloud"
+          />
         </div>
         <div className={styles.cloud}>
-          <img src="https://i.pinimg.com/originals/19/8d/ae/198daeda14097d45e417e62ff283f10e.png" />
+          <img
+            src="https://i.pinimg.com/originals/19/8d/ae/198daeda14097d45e417e62ff283f10e.png"
+            alt="cloud"
+          />
         </div>
         <div className={styles.isle}>
           <h3 className={styles.isleTitle}>404</h3>

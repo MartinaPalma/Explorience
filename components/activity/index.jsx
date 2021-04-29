@@ -10,7 +10,7 @@ const Activity = ({ activity }) => {
       <div className={styles.Activity_hero}>
         <h1 className={styles.Activity_city}>{activity.city.name}</h1>
         <img
-          src={applyFilterToJpeg(activity.cover_image_url, '?w=1000')}
+          src={applyFilterToJpeg(activity.cover_image_url, '?w=1300')}
           alt={activity.title}
           className={styles.Activity_image}
         />
