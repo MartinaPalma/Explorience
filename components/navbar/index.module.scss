@@ -11,7 +11,6 @@
   color: $light_color;
   z-index: 9;
   padding: 5px 0;
-
   &_container {
     width: 100%;
     padding: 0 6vw;
@@ -23,13 +22,12 @@
   .padding {
     padding: 0 3vw;
   }
-
   &_links {
     width: 100px;
     @include flex(row, space-between, center);
   }
   &_logo {
-    height: 50px;
+    height: 45px;
     cursor: pointer;
     font-weight: normal;
     transition: all 0.35s;
@@ -43,6 +41,9 @@
       color: $primary_color;
       filter: saturate(5);
     }
+    @include desktop {
+      height: 50px;
+    }
   }
   &_info {
     position: relative;
@@ -54,6 +55,9 @@
     &:active {
       filter: drop-shadow(2px 2px 6px $primary_color);
     }
+    @include desktop {
+      width: 33px;
+    }
   }
   &_qty {
     text-align: center;
@@ -64,9 +68,10 @@
     font-size: 0.7rem;
     position: absolute;
     top: -10px;
-    left: 16px;
+    left: 20px;
   }
 }
+
 .transparent {
   background: transparent;
 }

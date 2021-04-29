@@ -47,15 +47,15 @@ const InfoActivity = ({ activity }) => {
         </div>
         <div
           className={`${styles.InfoActivity_wrapperIcon} ${
-            !activity.sold_out && styles.opacity
+            !activity.daily && styles.opacity
           }`}
         >
           <img
-            src="/soldout.svg"
-            alt="esaurito"
+            src="/daily.svg"
+            alt="giornaliero"
             className={styles.InfoActivity_icon}
           />
-          <p>Esaurito</p>
+          <p>Giornaliero</p>
         </div>
         <div
           className={`${styles.InfoActivity_wrapperIcon} ${
