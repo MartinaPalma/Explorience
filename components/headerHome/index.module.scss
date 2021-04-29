@@ -1,63 +1,150 @@
 @import '../../styles/scss/mixins';
 @import '../../styles/scss/variables';
 .HeaderHome {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
   position: relative;
   margin: 0;
-}
-
-.image {
-  height: 100%;
-  width: 100vw;
-  flex-shrink: 0;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  transition: all 0.9s linear;
-  margin: 0;
-  filter: grayscale(0.3) contrast(1.2) brightness(70%);
-}
-
-.title {
-  @include flexCenter(center, center, column);
-  border-bottom: solid #17171750;
-  border-image-slice: 1;
-  border-width: 10px;
-  border-image-source: linear-gradient(to left, #3c9bced2, #3cb8ce8f);
-
   color: $light_color;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: 100vh;
-  text-align: center;
-
-  > h1 {
-    text-transform: uppercase;
-    margin: auto;
-    padding: 0;
-    width: 100vw;
-    font-size: 14vw;
-    white-space: nowrap;
-    color: $light_color;
-    opacity: 0.3;
+  &_image {
+    height: 100%;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');
+    flex-shrink: 0;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: all 0.9s linear;
+    margin: 0;
+    filter: contrast(1.2) brightness(80%);
   }
-  > h2 {
-    text-transform: uppercase;
-    margin-bottom: -80px;
+  &_titleWrapper {
     position: absolute;
-    margin-top: 14%;
-    font-size: 4vw;
-    text-shadow: 1px 2px 2px #1717179f;
-    transform: translateY(-45px);
+    width: 100%;
+    top: 70px;
+    padding: 0 6vw;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 2px 3px 4px #84b7b8;
     @include desktop {
-      font-size: 3vw;
-      margin-bottom: 0;
+      padding: 0 8vw;
+      opacity: 0.9;
+    }
+  }
+  &_title {
+    margin: 0;
+    margin-left: -2.7px;
+    color: $light_color;
+    font-size: 12vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    @include tablet {
+      margin-left: -4.5px;
+      font-size: 10vw;
+    }
+    @include desktop {
+      margin-left: -4.5px;
+      font-size: 8vw;
+    }
+  }
+  &_subtitle {
+    margin: 0;
+    font-size: 5.5vw;
+    font-weight: 400;
+    margin-top: -1.5vw;
+    > em {
+      color: #3c9ace;
+    }
+    @include tablet {
+      font-size: 4vw;
+    }
+    @include desktop {
+      font-size: 2.7vw;
+    }
+  }
+  &_cityWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    padding: 0 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @include desktop {
+      bottom: 60px;
+      padding: 0 8vw;
+    }
+  }
+  &_city {
+    font-size: 8.5vw;
+    margin: 0;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px #17171750;
+    @include tablet {
+      opacity: 0.9;
+      font-size: 4.8vw;
+    }
+    @include desktop {
+      font-size: 2.6vw;
+    }
+  }
+  &_aphorisms {
+    margin: 0;
+    width: 82vw;
+    font-size: 5.5vw;
+    font-style: oblique;
+    text-align: right;
+    text-shadow: 1px 1px 2px #17171750;
+
+    @include tablet {
+      opacity: 0.9;
+      font-size: 2.4vw;
+      width: 40vw;
+    }
+    @include desktop {
+      font-size: 1.2vw;
+      width: 18vw;
+    }
+  }
+  &_button {
+    background: $light_color;
+    color: $primary_color;
+    padding: 1.2vw 1vw;
+    width: 24vw;
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0px 0.4px 4px $light_color;
+    transition: $transition;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0.4px 4px $dark_color;
+    }
+    &:active {
+      box-shadow: inset 0px 0.4px 4px $dark_color;
+    }
+    @include tablet {
+      opacity: 0.9;
+      margin-top: 20px;
+      padding: 1vw 1.2vw;
+      width: 12vw;
+      font-size: 2.4vw;
+      text-align: center;
+      font-family: $font_heading;
+    }
+    @include desktop {
+      opacity: 0.9;
+      margin-top: 20px;
+      padding: 0.4vw 1vw;
+      width: 6.8vw;
+      font-size: 1.1vw;
+      text-align: center;
+      font-family: $font_heading;
     }
   }
 }
