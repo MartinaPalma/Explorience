@@ -11,7 +11,7 @@
 <hr>
 
 <h2 align="center">Listen carefully, Edgemony has a tale to tell...</h2>
-<img align="right" src="./public/mobile2.jpeg" alt="explorience" width=150/>
+<img align="right" src="./public/mobile1.jpeg" alt="explorience" width=150/>
 
 <h2>Technologies used</h2>
   <ul>
