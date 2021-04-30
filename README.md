@@ -5,13 +5,13 @@
 <h2 align="center">One project, five people, one team</h2>
 
 <p align="center">
-  <img src="./public/desk.jpeg" alt="explorience"/>
+  <img src="./public/mobile3.jpg" alt="explorience"/>
 </p>
 
 <hr>
 
 <h2 align="center">Listen carefully, Edgemony has a tale to tell...</h2>
-<img align="right" src="./public/mobile1.jpeg" alt="explorience" width=150/>
+<img align="right" src="./public/mobile2.jpeg" alt="explorience" width=150/>
 
 <h2>Technologies used</h2>
   <ul>
@@ -20,15 +20,17 @@
     <li>Javascript</li>
     <li>React.js</li>
     <li>Next.js</li>
-    <li>Axiox</li>
+    <li>Axios</li>
     <li>Musement API</li>
     <li>Made with ❤️</li>
   </ul>
+
+<br>
 <hr>
 
 <img align="right" src="./public/mobile2.jpeg" alt="less-than-3" width=150/>
 
-<br><br>
+<br>
 
 <h2>Features</h2>
 <ol>
@@ -37,7 +39,7 @@
   <li>SEO optimized</li>
   <li>UI and UX user friendly</li>
   <li>Performance oriented</li>
-  <li>Scalable and best pratices</li>
+  <li>Scalable and best practices</li>
   <li>Stunning pages! 🤩</li>
 </ol>
 
